@@ -83,6 +83,9 @@ class PuppetdbInventory(object):
             'ssl_cert': self.config.get('ssl_cert') or None
         }
 
+        if puppetdb_config['api_version'] == 4:
+            del puppetdb_config['api_version']
+
         self.puppetdb = connect(**puppetdb_config)
 
         self.cache_file = self.config.get('cache_file')

@@ -49,6 +49,10 @@
 # Regardless of whether or not group_by is set, the inventory will
 # always return a group called 'all' with all the hosts in it.
 #
+# == Notes on api_version
+# When set to 4, this will allow the use of pypuppetdb 2.x, which deprecated
+# the api versions. If set to 4 with pypuppetdb 0.1.1 installed it will 
+# produce an invalid version error.
 ---
 host: localhost
 api_version: 3
